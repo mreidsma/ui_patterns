@@ -102,16 +102,17 @@ i{font-style:italic;}
 .lib-horizontal-list ul {font-size:.95em;margin-bottom:1em;}
 .lib-horizontal-list ul li {float:left;margin:1em 1em 0 0;padding:0 .7em 0 0;}
 
-.copy ul,
-.copy ol,
-.copy dl {color:#555;font-size:.95em;margin-bottom:1.5em;line-height:1.4em;}
-.copy ul{list-style-type:disc;padding-left:1.8em;}
-.copy ol {list-style-type:decimal;padding-left:1.8em;}
+ul.bullet-list,
+ol.number-list,
+dl.def-list {color:#555;margin-bottom:1.5em;line-height:1.4em;}
+ul.bullet-list{list-style-type:disc;padding-left:1.8em;}
+ol.number-list {list-style-type:decimal;padding-left:1.8em;}
 
-.copy li {margin:.5em 0;}
+.ul.bullet-list li,
+.ol.number-list li {margin:.5em 0;}
 
-.copy dt {font-weight:bold;margin-top:.8em;color:#222;}
-.copy dd {margin-bottom:.7em;border-left:.3em solid #dedede;padding-left:.5em;}
+.def-list dt {font-weight:bold;margin-top:.8em;color:#222;}
+.def-list dd {margin-bottom:.7em;border-left:.3em solid #dedede;padding-left:.5em;}
 
 .lib-tabs {height: 2.6em;margin-top:1.5em;border-bottom: 1px solid #bbb;font-size:1em;}
 .lib-tabs ul {list-style-type: none;margin: 0 0 0 1em;padding: 0;width: 100%;}
@@ -144,6 +145,26 @@ i{font-style:italic;}
 .lib-form input[type="radio"],
 .lib-form input[type="checkbox"]{margin-top:.7em;}
 
+/* Simple Form Styles */
+
+.lib-simple-form { margin: auto;background: #fff; }
+form.lib-simple-form input[type="text"] {width: 98%;padding: .2em 1%;height: 1.8em;font-size: 1.2em;border: none; display: inline; }
+
+form.lib-book-form select { width: 25%; display: block; float: left;}
+	
+form.lib-book-form input[type="text"] {
+	width: 71%;
+	margin-left: 1%;
+	border: 1px solid #ddd;
+	font-size: 1.4em;
+	padding: .333em 1%;
+}
+	
+form.lib-simple-form input[type="submit"] {
+	position: relative;
+	
+}
+
 /* Status Message Styles */
 
 .lib-success {display: block;line-height:1.5em;margin: -0.5em 0 1.6em 0;padding: 1em 1.6em;background: #b2ff7f; border: 1px solid #8acc66;text-align: left;color: #444;}
@@ -168,7 +189,7 @@ i{font-style:italic;}
 @media screen and (min-width: 56.25em) {
 
 h2, h3 { background-color: #fff; font-size: 2em; padding: 0; color: #004875; }
-.lib-button-wide { width: 80%; margin:auto; position: relative !important; top: 0 !important; bottom: .3em !important;font-size: 1.1em;}
+.lib-button-wide { width: 80%; margin:auto; font-size: 1.4em;}
 
 
 }

@@ -79,7 +79,7 @@
 			</div><!-- End .codeblock .monospace -->
 			
 			<h4>Writing readable code</h4>
-				<ul>
+				<ul class="bullet-list">
 					<li>Use classes for <abbr title="Cascading Style Sheets">CSS</abbr> styles. Use ids for semantic purposes and for in-page navigation.</li>
 					<li>Alphabetize attributes within an element. For example: <code>&lt;div class="line" id="lib-access" title="Accessibility Information"&gt;</code>. The exception to this is the <code>&lt;a&gt;</code> element, which should start with the href attribute; alphabetize the attributes that follow.</li>
 					<li>Alphabetize multiple classes within the class attribute. For instance: <code>&lt;div class="accordion-body codeblock lib-button monospace"&gt;</code></li>
@@ -91,7 +91,7 @@
 	</div><!-- End .line #lib-basics -->
 
 	<div class="line" id="lib-colors">
-		<div class="span2 unit">
+		<div class="span1 unit">
 
 			<h3>Colors</h3>
 
@@ -115,15 +115,17 @@
 					<p class="colorblock"style="background-color: #363636; color: #fff;">#363636</p>
 				</div>
 
-			</div><!-- End .line -->
+				<div class="left span4 unit">
+					<p class="colorblock" style="background-color: #bbbbbb; color: #fff;">#BBBBBB</p>
+				</div>
 
-			<p>And, of course, white (#FFFFFF).</p>
-
-		</div><!-- End .span2.unit -->
-
-		<div class="last.span2 unit unit">
-
+				<div class="left span4 unit">
+					<p class="colorblock"style="background-color: #dedede; color: #363636;">#DEDEDE</p>
+				</div>
+		
+			</div>
 		</div><!-- End .lastUnit.span2.unit -->
+		<p>And, of course, white (#FFFFFF).</p>
 	</div><!-- End .line#lib-colors -->
 
 	<div class="line" id="lib-grid">
@@ -213,7 +215,7 @@
 		
 			<p>Use the following tips when writing <abbr title="HyperText Markup Language">HTML</abbr> to improve accessibility (as a federally funded institution, we must adhere to the <abbr title="Americans with Disabilities Act">ADA</abbr>).</p>
 		
-			<ul>
+			<ul class="bullet-list">
 				<li>All images must have <a href="http://www.w3schools.com/tags/att_img_alt.asp">alt attributes</a>. Describe the image, don&#8217;t just repeat the filename.</li>
 				<li>For navigation items and forms, if possible, use the <a href="http://www.w3.org/TR/html4/interact/forms.html#h-17.11.1">tabindex attribute</a> to make it easy to navigate without a mouse.</p>
 				<li>Use the <a href="http://www.w3schools.com/tags/tag_abbr.asp"><code>&lt;abbr&gt;</code> element</a> for all abbreviations and acronyms!</li>
@@ -227,11 +229,11 @@
 			<h3>Typography</h3>
 
 			<p>Use standard <abbr title="HyperText Markup Language">HTML</abbr> elements without any inline styles. A few notes:</p>
-				<ol>
+				<ol class="number-list">
 					<li>Don&#8217;t use <code>&lt;h1&gt;</code>.</li>
 					<li><code>&lt;h2&gt;</code> is reserved for the page title at the top of the #page-content div. Please do not repeat it.</li>
 					<li>When possible, please use typographically correct punctuation:
-						<ul>
+						<ul class="bullet-list">
 							<li>Apostophe: &#8217; <code>&amp;#8217;</code></li>
 							<li>Single Quotes: &#8216;&nbsp;&#8217; <code>&amp;#8216; &amp;#8217;</code></li>
 							<li>Double Quotes: &#8220;&nbsp;&#8221; <code>&amp;#8220; &amp;#8221;</code></li>
@@ -283,13 +285,13 @@
 		
 				<hr />
 		
-				<ul>
-					<li>Here&#8217;s a <code>&lt;ul&gt;</code></li>
+				<ul class="bullet-list">
+					<li>Here&#8217;s a <code>&lt;ul class="bullet-list"&gt;</code></li>
 					<li>There can be a bunch of lines.</li>
 				</ul>
 		
-				<ol>
-					<li>Here&#8217;s a <code>&lt;ol&gt;</code></li>
+				<ol class="number-list">
+					<li>Here&#8217;s a <code>&lt;ol class="number-list"&gt;</code></li>
 					<li>There can be a bunch of lines.</li>
 				</ol>
 		
@@ -477,7 +479,42 @@
 		<div class="span1 unit">
 			<h4>Simple Forms</h4>
 
-			<p>When a single text input and a single submit button are all you need for a form, use the .lib-simple-form pattern. If you need a select box, a text input, and a submit, use the .lib-book-form pattern. (We use these on our "Find Articles" and "Find Books" pages, for instance.)</p>
+			<p>When a single text input and a single submit button are all you need for a form, use the .lib-simple-form pattern. If you need a select box, a text input, and a submit, use the .lib-book-form pattern. (We use these on our "Find Articles" and "Find Books" pages, for instance.) Use the grid patterns to make layout work for your implementation.</p>
+
+			<hr />
+
+			<form class="lib-simple-form">
+				<div class="line">
+					<div class="left span2of3 unit">
+						<input readonly="readonly" style="border: 1px solid #bbb;" type="text" value="form.lib-simple-form" />
+					</div>
+					<div class="lastUnit left span3 unit">
+						<input class="lib-button-wide" type="submit" value="Find It" />
+					</div>
+				</div>
+			</form>
+
+			<hr />
+
+			<form class="lib-book-form">
+				<div class="line">
+					<div class="left span2of3 unit">
+						<select name="searchtype">
+							<option selected="selected" value="X">Keyword</option>
+							<option value="t">Title</option>
+							<option value="a">Author</option>
+							<option value="c">Call No.</option>
+							<option value="i">ISBN</option>
+							<option value="d">Subject</option>
+							<option value="g">Gov. Doc. No.</option>
+						</select>
+						<input readonly="readonly" style="border: 1px solid #bbb;" type="text" value="form.lib-book-form" />
+					</div>
+					<div class="lastUnit left span3 unit">
+						<input class="lib-button-wide" type="submit" value="Find It" />
+					</div>
+				</div>
+			</form>
 
 			<div class="accordion-head lib-button-small-grey">Sample Markup</div>
 
@@ -485,7 +522,15 @@
 
 <pre><code>
 &lt;form class="lib-simple-form"&gt;
-	
+	&lt;div class="line"&gt;
+		&lt;div class="left span2of3 unit"&gt;
+			&lt;input readonly="readonly" style="border: 1px solid #bbb;" type="text" value="form.lib-simple-form" /&gt;
+		&lt;/div&gt;
+		&lt;div class="lastUnit left span3 unit"&gt;
+			&lt;input class="lib-button-wide" type="submit" value="Find It" /&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/form&gt;
 </code></pre>
 
 				</div>
